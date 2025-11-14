@@ -1,0 +1,136 @@
+# Quantum LIMIT Graph v2.4.0 Level 5 MetaAgent AI Scientist Architecture
+
+## Core Principles
+
+### 1. Iterative Cycles
+- Research hypothesis generation → validation → refinement loop
+- Bootstrap stability checks at each iteration
+- Convergence monitoring with adaptive stopping criteria
+
+### 2. Parallel Agents
+- Researcher: hypothesis generation and exploration
+- Critic: validation and contradiction detection
+- Synthesizer: evidence aggregation and claim strength assessment
+- Orchestrator: meta-level coordination and resource allocation
+
+### 3. Traceable Reasoning
+- Full provenance tracking: commit hash, script path, artifact URIs
+- Pipeline version stamping (2.4.0-NSN)
+- Reasoning chain preservation with quantum-walk paths
+- Contradiction resolution task generation
+
+### 4. World-Model Context
+- Graph-first representation of knowledge state
+- Node attributes: findings, hypotheses, evidence, contradictions
+- Edge weights: support strength, confidence, temporal ordering
+- Quantum-walk exploration for non-local discovery
+
+## Level 5 Extensions
+
+### Validation Rails
+- Bootstrap stability: resample-based confidence (threshold: 0.8)
+- Holdout consistency: train/test agreement (threshold: 0.75)
+- Sensitivity analysis: parameter perturbation robustness
+- Required supports: minimum evidence count (threshold: 2)
+- Contradiction rate: acceptable conflict level (threshold: 0.2)
+
+### Quantum-Walk Exploration
+- Weight-driven node selection using quantum probability amplitudes
+- Superposition of exploration paths for parallel hypothesis testing
+- Entanglement-based correlation discovery
+- Measurement collapse to concrete research directions
+
+### Reproducible Provenance
+- Git commit tracking for all generated artifacts
+- Script execution metadata (timestamp, parameters, environment)
+- Artifact URI registry (local paths, remote storage)
+- Pipeline version compatibility matrix
+
+## Architecture Layers
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    CLI Interface (cli.rs)                    │
+│              Demo Cycle Runner & User Commands               │
+└─────────────────────────────────────────────────────────────┘
+                              │
+┌─────────────────────────────────────────────────────────────┐
+│              MetaAgent Orchestrator (metaagent.rs)           │
+│    Parallel Agent Coordination & Iterative Cycle Control    │
+└─────────────────────────────────────────────────────────────┘
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        │                     │                     │
+┌───────▼────────┐  ┌────────▼────────┐  ┌────────▼────────┐
+│   Researcher   │  │     Critic      │  │  Synthesizer    │
+│  (hypothesis)  │  │  (validation)   │  │ (aggregation)   │
+└───────┬────────┘  └────────┬────────┘  └────────┬────────┘
+        │                     │                     │
+        └─────────────────────┼─────────────────────┘
+                              │
+┌─────────────────────────────────────────────────────────────┐
+│           Quantum-Walk Explorer (quantum_walk.rs)            │
+│        Weight-Driven Selection & Path Superposition          │
+└─────────────────────────────────────────────────────────────┘
+                              │
+┌─────────────────────────────────────────────────────────────┐
+│            World Model Graph (model.rs)                      │
+│   Nodes: Findings/Hypotheses | Edges: Support/Contradiction │
+└─────────────────────────────────────────────────────────────┘
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        │                     │                     │
+┌───────▼────────┐  ┌────────▼────────┐  ┌────────▼────────┐
+│ Validation     │  │  Provenance     │  │   I/O & Policy  │
+│ Rails          │  │  Tracker        │  │   Management    │
+│ (level5.rs)    │  │ (provenance.rs) │  │   (io.rs)       │
+└────────────────┘  └─────────────────┘  └─────────────────┘
+```
+
+## Data Flow
+
+1. **Input**: Research question + initial context (io.rs)
+2. **Initialization**: Create world model graph with seed nodes (model.rs)
+3. **Exploration**: Quantum-walk selects promising paths (quantum_walk.rs)
+4. **Generation**: Researcher agent proposes hypotheses (metaagent.rs)
+5. **Validation**: Critic applies Level 5 rails (level5.rs)
+6. **Synthesis**: Aggregator computes claim strength (metaagent.rs)
+7. **Provenance**: Track all operations and artifacts (provenance.rs)
+8. **Iteration**: Repeat until convergence or max cycles
+9. **Output**: Validated findings with full lineage (io.rs)
+
+## Quality Gates (CI Integration)
+
+### Build Gates
+- `cargo build --release`: compilation success
+- `cargo fmt --check`: code formatting
+- `cargo clippy -- -D warnings`: linting
+
+### Test Gates
+- `cargo test`: unit and integration tests
+- Level 5 validation thresholds:
+  - bootstrap_stability >= 0.8
+  - holdout_consistency >= 0.75
+  - required_supports >= 2
+  - contradiction_rate <= 0.2 (with resolution tasks)
+
+### Schema Gates
+- JSON/YAML validation for I/O formats
+- Provenance completeness checks
+- Pipeline version compatibility
+
+## Contributor Integration Points
+
+1. **Add New Agent**: Implement `Agent` trait in metaagent.rs
+2. **Custom Validation**: Extend `ValidationRails` in level5.rs
+3. **Exploration Strategy**: Modify quantum-walk selection in quantum_walk.rs
+4. **Provenance Hooks**: Add tracking points in provenance.rs
+5. **I/O Formats**: Extend serialization in io.rs
+
+## Future Extensions
+
+- Dashboard integration for real-time monitoring
+- Discovery map visualization (nodes/edges with provenance)
+- Reliability panel (Level 5 metrics per node)
+- Coherence monitor (global contradiction rate)
+- Exploration heatmap (quantum-walk coverage)
